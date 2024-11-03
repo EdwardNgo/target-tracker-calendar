@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 import { format, startOfMonth, endOfMonth, eachDayOfInterval, addMonths, isSameMonth, isSameDay, getDay } from 'date-fns'
-import { Calendar as CalendarIcon, ChevronLeft, ChevronRight, Check, X, Trophy } from 'lucide-react'
+import { Calendar as  ChevronLeft, ChevronRight, X, Trophy } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { Input } from "@/components/ui/input"
@@ -54,7 +54,7 @@ export default function TargetTrackerCalendar() {
   
   const calculateStreak = () => {
     let currentStreak = 0
-    let date = new Date()
+    const date = new Date()
 
     while (true) {
       const dateString = format(date, 'yyyy-MM-dd')
@@ -212,13 +212,13 @@ export default function TargetTrackerCalendar() {
           <DialogHeader>
             <DialogTitle>Congratulations!</DialogTitle>
             <DialogDescription>
-              You've reached a milestone streak of {streak} days!
+              You&apos;ve reached a milestone streak of {streak} days!
             </DialogDescription>
           </DialogHeader>
           <div className="flex flex-col items-center justify-center p-4">
             <Trophy className="h-24 w-24 text-yellow-400 mb-4" />
             <p className="text-lg font-semibold text-center">
-              Keep up the great work! You're making excellent progress towards your goals.
+              Keep up the great work! You&apos;re making excellent progress towards your goals.
             </p>
           </div>
           <div className="flex justify-center">
